@@ -1,0 +1,19 @@
+{% extends 'fps/clientWizardMenu.html' %}
+{% load crispy_forms_tags %}
+{% block clientcontent %}
+<div class="container-fluid">
+
+<div class="col-md-12" style="text-align: center;">
+    <div class="jumbotron">
+        <p class="lead">
+            <a href="{% url 'fps:clientregistration' %}" class="btn btn-sm btn-info" type="button" style="font-size: 2rem;background: #1d809f" >Client Registration</a>
+
+            <a href="{% url 'fps:clientvalidation' %}" class="btn btn-sm btn-info" type="button"  style="font-size: 2rem;background: #1d809f">Client Search</a>
+        </p>
+    </div>
+</div>
+
+</div>
+
+
+{% endblock %}

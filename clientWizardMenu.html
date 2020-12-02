@@ -1,0 +1,49 @@
+{% extends 'fps/appBase.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+       <div class="card mb-12">
+                      <div class="card-header">
+                        <h3 class="card-title">Client Visit Form</h3>
+                      </div>
+                      <div class="card-body">
+                          <div class="wizard">
+                             <div class="wizard-inner">
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="{{first}}">
+                                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                                            <span class="round-tab">1</span>
+                                        </a>
+                                         <p>Registration/Search</p>
+                                    </li>
+
+                                    <li role="presentation" class="{{second}}">
+                                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                            <span class="round-tab">2 </span>
+                                        </a>
+                                        <p>Visit Notes</p>
+                                    </li>
+                                    <li role="presentation" class="{{third}}">
+                                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete 3">
+                                            <span class="round-tab">3</span>
+                                        </a>
+                                         <p>Request Entry</p>
+                                    </li>
+                                    {% if user.is_authenticated and user.groups.all.0.name == "volunteer" %}
+                                    <li role="presentation" class="{{fourth}}">
+                                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete 4">
+                                            <span class="round-tab">4</span>
+                                        </a>
+                                         <p>Supplies</p>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                             </div>
+
+
+        </div>
+        </div>
+        {% block clientcontent %}
+        {% endblock %}
+        </div>
+{% endblock %}

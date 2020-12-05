@@ -10304,3 +10304,12 @@ ul.menu {
     text-transform: uppercase;
     text-decoration: none;
 }
+
+/* Added by Cheran */
+header{padding: 10px; float: left; width: 100%;}
+.tablePlaceholder{width: 100%; overflow-x:auto;}
+.dropdownMenu{float:right; padding-left: 0; list-style-type: none; margin: 10px 0 0 0;}
+.dropdownMenu .nav-link{color:#fff;}
+.wizard .nav-tabs > li{ text-align: center;}
+.wizard .nav-tabs > li a{ width: 61px; height: 61px;}
+.wizard li p{ font-size: 13px; margin-bottom: 20px;}

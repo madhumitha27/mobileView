@@ -374,7 +374,7 @@ span.round-tab {
     background: #fff;
     border: 2px solid #1d809f;
     z-index: 2;
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     text-align: center;
     font-size: 25px;
@@ -417,7 +417,7 @@ span.round-tab:hover {
 .wizard li.active:after {
     content: " ";
     position: absolute;
-    left: 46%;
+    left: 47%;
     opacity: 1;
     margin: 0 auto;
     bottom: 0px;

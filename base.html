@@ -11,8 +11,8 @@
     <link href="static/css/styles.css" rel="stylesheet" rel="stylesheet" type="text/css">
 
     <link href="static/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-        id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"    id="bootstrap-css"> -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
         rel="stylesheet" type="text/css">
     <style>
@@ -25,43 +25,95 @@
 
 <body class="sb-nav-fixed">
 
-<header class="navbar-dark bg-dark mb-4">
-        <img style="margin-left:5px;" width=150" height="50" src="static/img/Logo.jpg" alt="logo" title="logo" border="0">
-        <a class="navbar-brand" style="float:none;" href="">Good Shepherd Food Pantry</a>
-    <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+<header class="navbar-dark bg-dark">
 
-        <a class="navbar-brand" href="{% url 'fps:About' %}">ABOUT US</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <img style="margin:0 10px 0 5px;" width=150" height="50" src="static/img/Logo.jpg" alt="logo" title="logo" border="0">
+        <a class="navbar-brand" style="margin-right:3rem;" href="">Good Shepherd Food Pantry</a>
 
-        <a class="navbar-brand" href="{% url 'fps:organization' %}">ORGANIZATION</a>
-
-        <a class="navbar-brand" href="{% url 'fps:contactus' %}">CONTACT US</a>
-
-        <a class="navbar-brand" href="{% url 'login' %}" class="item">LOGIN</a>
-    </div>
-
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'fps:About' %}">ABOUT US <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fps:organization' %}">ORGANIZATION</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fps:contactus' %}">CONTACT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}" tabindex="-1">LOGIN</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 </header>
-<div class="page-container">
-    <img src="static/img/homepage.jpg" style="width:100%;height:370px">
-</div>
 
-<main>
+<div class="page-container">
+    <div class="HomeBGImg"></div>
+</div>
+<div class="content white-square container">
+        <div class="row justify-content-start pt-4 pb-4">
+
+            <div class="card text-center col-sm m-2">
+              <div class="card-body">
+                <h5 class="card-title">ABOUT US</h5>
+                <p class="card-text">If you want to know about our values and mission, click below.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <a href="{% url 'fps:About' %}" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+
+            <div class="card text-center col-sm m-2">
+              <div class="card-body">
+                <h5 class="card-title">ORGANIZATION</h5>
+                <p class="card-text">If you want to Know more about details about organization</p>
+              </div>
+              <div class="card-footer text-muted">
+                <a href="{% url 'fps:organization' %}" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+
+            <div class="card text-center col-sm m-2">
+              <div class="card-body">
+                <h5 class="card-title">CONTACT US</h5>
+                <p class="card-text">If you want to know any specific details. Be sure to contact us using the link below on FPS website.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <a href="{% url 'fps:contactus' %}" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+
+        </div>
+    </div>
+<!--main>
             <div class="container-fluid">
                  <div class="container">
-                     <div class="ui main">
+                    <div class="row justify-content-center">
+                     <div class="ui main col col-md-4 mt-5">
 						<h2>Log In</h2>
 						<form method="post">
 								<div id="div_id_username" class="form-group">
 										<label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span> </label>
-										<div class=""> <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" class="textinput textInput form-control" required="" id="id_username"> </div> 
+                    <div class=""> <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" class="textinput textInput form-control" required="" id="id_username"> </div>
+                    <br>
+                    <label for="id_password" class=" requiredField">Password<span class="asteriskField">*</span> </label>
+										<div class=""> <input type="password" name="password" autofocus="" autocapitalize="none"  maxlength="10" class="textinput textInput form-control" required="" id="id_password"> </div>  
 								</div>
 							<button class="btn btn-success ml-2" type="submit">Log In</button>
 						</form>
 						<br/>
 							<p><a href="{% url 'password_reset' %}">Forgotten your  password?</a></p>
-					</div>
+                    </div>
+                </div>
                  </div>
             </div>
-</main>
+</main-->
 
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid">

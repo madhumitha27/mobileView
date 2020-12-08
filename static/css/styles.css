@@ -10310,6 +10310,9 @@ header{padding: 10px; float: left; width: 100%;}
 .tablePlaceholder{width: 100%; overflow-x:auto;}
 .dropdownMenu{float:right; padding-left: 0; list-style-type: none; margin: 10px 0 0 0;}
 .dropdownMenu .nav-link{color:#fff;}
-.wizard .nav-tabs > li{ text-align: center;}
+.wizard .nav-tabs > li{ text-align: center; position: relative; width: 25%;}
 .wizard .nav-tabs > li a{ width: 61px; height: 61px;}
 .wizard li p{ font-size: 13px; margin-bottom: 20px;}
+
+.nav-link{padding: 5px 20px;}
+.HomeBGImg{background:url("../img/homepage.jpg") no-repeat; background-size: 100% auto; width: 100%; min-height: 270px; max-height: 345px; float: left; }
